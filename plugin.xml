@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ashera.gridlayout"
+        version="1.0">
+
+  <name>JSON adapter Plugin</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+  
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AndroidXGridLayoutPlugin">
+        <param name="android-package" value="com.ashera.gridlayout.AndroidXGridLayoutPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+	<framework src="android/core.gradle" custom="true" type="gradleReference" />
+   	 <!-- start src -->
+     <source-file src="android/src/com/ashera/gridlayout/AndroidXGridLayoutPlugin.java" target-dir="src/com/ashera/gridlayout"/>
+     <source-file src="android/src/com/ashera/gridlayout/GridLayoutImpl.java" target-dir="src/com/ashera/gridlayout"/>
+     <!-- src end -->
+     
+     <!-- start tsc -->
+     <source-file src="android/tsc/src/android/widget/GridLayoutImpl.ts" target-dir="tsc/src/android/widget"/>
+     <!-- tsc end -->
+  </platform>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="com.ashera.gridlayout.ios">
+        	<param name="ios-package" value="GridLayoutCordovaPlugin" />
+         	<param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+   	 <!-- start ios -->
+     <header-file src="ios/ios/src/GridLayoutCordovaPlugin.h" target-dir="GridLayoutPlugin/ios/src"/>
+     <source-file src="ios/ios/src/GridLayoutCordovaPlugin.m" target-dir="GridLayoutPlugin/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/GridLayoutImpl.h" target-dir="GridLayoutPlugin/ios/src"/>
+     <source-file src="ios/ios/src/GridLayoutImpl.m" target-dir="GridLayoutPlugin/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/GridLayoutPlugin.h" target-dir="GridLayoutPlugin/ios/src"/>
+     <source-file src="ios/ios/src/GridLayoutPlugin.m" target-dir="GridLayoutPlugin/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <!-- ios end -->
+     <!-- start AndroidX-Gridlayout -->
+     <header-file src="ios/library/AndroidX-Gridlayout/src/GridLayout.h" target-dir="GridLayoutPlugin/AndroidX-Gridlayout/src"/>
+     <source-file src="ios/library/AndroidX-Gridlayout/src/GridLayout.m" target-dir="GridLayoutPlugin/AndroidX-Gridlayout/src" compiler-flags="-fno-objc-arc"/>
+     <!-- AndroidX-Gridlayout end -->
+     <!-- start tsc -->
+     <source-file src="ios/tsc/src/ios/widget/GridLayoutImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <!-- tsc end -->
+  </platform>
+  <platform name="browser">
+  	<config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AndroidXGridLayoutPlugin">
+        <param name="android-package" value="com.ashera.gridlayout.AndroidXGridLayoutPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+   	<framework src="browser/core.gradle" custom="true" type="gradleReference" />
+  </platform>
+  <platform name="swt">
+	<config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AndroidXGridLayoutPlugin">
+        <param name="android-package" value="com.ashera.gridlayout.AndroidXGridLayoutPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+   	<framework src="swt/core.gradle" custom="true" type="gradleReference" />
+  </platform>
+
+
+
+
+
+</plugin>

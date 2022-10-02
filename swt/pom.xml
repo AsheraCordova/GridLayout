@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>SWTAndroidXGridLayoutPlugin</artifactId>
+
+	<parent>
+		<groupId>com.ashera</groupId>
+		<artifactId>swt</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<build>
+		<sourceDirectory>gen</sourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<!-- start xml -->
+		<dependency>
+			<groupId>com.ashera</groupId>
+			<artifactId>SWTCommon</artifactId>
+		</dependency>
+  		<dependency>
+			<artifactId>SWTCorePlugin</artifactId>
+			<groupId>com.ashera</groupId>
+		</dependency>
+		<dependency>
+			<artifactId>SWTLayouts</artifactId>
+			<groupId>com.ashera</groupId>
+		</dependency>
+		<!-- xml end -->
+		<dependency>
+			<artifactId>SWTAndroidX-Gridlayout</artifactId>
+			<groupId>com.ashera</groupId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+</project>

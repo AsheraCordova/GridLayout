@@ -1,0 +1,9 @@
+repositories {
+    mavenLocal();
+    google();
+    jcenter();
+}
+
+dependencies {
+	implementation group: 'androidx.gridlayout', name: 'gridlayout', version: '1.0.0'
+}

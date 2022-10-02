@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ashera.gridlayout.ios"
+        version="1.0">
+
+  <name>Gridlayout Plugin</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+  
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="com.ashera.gridlayout.ios">
+        	<param name="ios-package" value="GridLayoutCordovaPlugin" />
+         	<param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+   	 <!-- start ios -->
+     <header-file src="ios/src/GridLayoutCordovaPlugin.h" target-dir="GridLayoutPlugin/ios/src"/>
+     <source-file src="ios/src/GridLayoutCordovaPlugin.m" target-dir="GridLayoutPlugin/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/GridLayoutImpl.h" target-dir="GridLayoutPlugin/ios/src"/>
+     <source-file src="ios/src/GridLayoutImpl.m" target-dir="GridLayoutPlugin/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/GridLayoutPlugin.h" target-dir="GridLayoutPlugin/ios/src"/>
+     <source-file src="ios/src/GridLayoutPlugin.m" target-dir="GridLayoutPlugin/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <!-- ios end -->
+     <!-- start AndroidX-Gridlayout -->
+     <header-file src="library/AndroidX-Gridlayout/src/GridLayout.h" target-dir="GridLayoutPlugin/AndroidX-Gridlayout/src"/>
+     <source-file src="library/AndroidX-Gridlayout/src/GridLayout.m" target-dir="GridLayoutPlugin/AndroidX-Gridlayout/src" compiler-flags="-fno-objc-arc"/>
+     <!-- AndroidX-Gridlayout end -->
+     <!-- start tsc -->
+     <source-file src="tsc/src/ios/widget/GridLayoutImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <!-- tsc end -->
+  </platform>
+
+
+</plugin>

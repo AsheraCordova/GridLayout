@@ -1,0 +1,14 @@
+repositories {
+    mavenLocal();
+    google();
+    jcenter();
+}
+
+dependencies {
+	def project_version = '1.0.0';
+	
+	//grid layout
+	implementation "com.ashera:SWTAndroidX-Gridlayout:${project_version}"
+	implementation "com.ashera:WebAndroidXGridlayoutPlugin:${project_version}"
+    
+}

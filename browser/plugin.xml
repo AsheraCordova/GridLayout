@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ashera.gridlayout.web"
+        version="1.0">
+
+  <name>Gridlayout Plugin</name>
+
+  <platform name="browser">
+  	<config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AndroidXGridLayoutPlugin">
+        <param name="android-package" value="com.ashera.gridlayout.AndroidXGridLayoutPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+   	<framework src="core.gradle" custom="true" type="gradleReference" />
+  </platform>
+</plugin>
