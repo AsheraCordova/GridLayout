@@ -131,7 +131,7 @@ J2OBJC_FIELD_SETTER(ASGridLayoutImpl_GridLayoutExt, onLayoutEvent_, ASOnLayoutEv
 @end
 
 NSString *ASGridLayoutImpl_LOCAL_NAME = @"androidx.gridlayout.widget.GridLayout";
-NSString *ASGridLayoutImpl_GROUP_NAME = @"GridLayout";
+NSString *ASGridLayoutImpl_GROUP_NAME = @"androidx.gridlayout.widget.GridLayout";
 
 @implementation ASGridLayoutImpl
 

@@ -32,7 +32,7 @@ public class GridLayoutImpl extends BaseHasWidgets {
 	//start - body
 	private HTMLElement htmlElement;
 	public final static String LOCAL_NAME = "androidx.gridlayout.widget.GridLayout"; 
-	public final static String GROUP_NAME = "GridLayout";
+	public final static String GROUP_NAME = "androidx.gridlayout.widget.GridLayout";
 	private androidx.gridlayout.widget.GridLayout gridLayout;
 	
 

@@ -405,6 +405,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setBackgroundWithNSString:(NSString *)arg0;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setChildXmlWithNSString:(NSString *)arg0;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setClickableWithBoolean:(jboolean)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setClipChildrenWithBoolean:(jboolean)arg0;
