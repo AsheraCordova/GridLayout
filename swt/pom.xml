@@ -38,7 +38,7 @@
 		</dependency>
 		<!-- xml end -->
 		<dependency>
-			<artifactId>SWTAndroidX-Gridlayout</artifactId>
+			<artifactId>AndroidXJGridlayout</artifactId>
 			<groupId>com.ashera</groupId>
 			<version>${project.version}</version>
 		</dependency>
