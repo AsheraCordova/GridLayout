@@ -28,6 +28,7 @@
 @class ASGridLayoutImpl_GridLayoutParamsBean;
 @class ASWidgetAttribute;
 @class ASWidgetAttributeMap;
+@class IOSClass;
 @protocol ASIFragment;
 @protocol ASILifeCycleDecorator;
 @protocol ASIWidget;
@@ -81,6 +82,8 @@
 
 - (ADXGridLayout_Spec *)getSpecWithNSString:(NSString *)str;
 
+- (IOSClass *)getViewClass;
+
 - (void)invalidate;
 
 - (void)loadAttributesWithNSString:(NSString *)localName;
@@ -107,8 +110,7 @@
 
 - (void)setIdWithNSString:(NSString *)id_;
 
-- (void)updateMeasuredDimensionWithInt:(jint)width
-                               withInt:(jint)height;
+- (void)setVisibleWithBoolean:(jboolean)b;
 
 #pragma mark Package-Private
 
@@ -260,8 +262,11 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 #define INCLUDE_ASIMaxDimension 1
 #include "IMaxDimension.h"
 
+@class ADRect;
+@class ADView;
 @class ASGridLayoutImpl;
 @class ASWidgetAttribute;
+@class IOSIntArray;
 @class IOSObjectArray;
 @protocol ASIWidget;
 @protocol JavaUtilList;
@@ -279,11 +284,17 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 
 - (id)getAttributeWithASWidgetAttribute:(ASWidgetAttribute *)widgetAttribute;
 
+- (void)getLocationOnScreenWithIntArray:(IOSIntArray *)appScreenLocation;
+
 - (jint)getMaxHeight;
 
 - (jint)getMaxWidth;
 
 - (id<JavaUtilList>)getMethods;
+
+- (void)getWindowVisibleDisplayFrameWithADRect:(ADRect *)displayFrame;
+
+- (ADView *)inflateViewWithNSString:(NSString *)layout;
 
 - (void)initialized OBJC_METHOD_FAMILY_NONE;
 
@@ -296,6 +307,10 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 - (void)onMeasureWithInt:(jint)widthMeasureSpec
                  withInt:(jint)heightMeasureSpec;
 
+- (void)remeasure;
+
+- (void)removeFromParent;
+
 - (void)setAttributeWithASWidgetAttribute:(ASWidgetAttribute *)widgetAttribute
                              withNSString:(NSString *)strValue
                                    withId:(id)objValue;
@@ -303,6 +318,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 - (void)setMaxHeightWithInt:(jint)height;
 
 - (void)setMaxWidthWithInt:(jint)width;
+
+- (void)setMyAttributeWithNSString:(NSString *)name
+                            withId:(id)value;
 
 - (void)setVisibilityWithInt:(jint)visibility;
 
@@ -525,6 +543,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setMinWidthWithNSString:(NSString *)arg0;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setModelDescPathWithNSString:(NSString *)arg0;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setModelForWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setModelIdPathWithNSString:(NSString *)arg0;
@@ -553,9 +573,13 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnLongClickWithNSString:(NSString *)arg0;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnSwipedWithNSString:(NSString *)arg0;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnTouchWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOrientationWithNSString:(NSString *)value;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOutsideTouchableWithBoolean:(jboolean)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setPaddingBottomWithNSString:(NSString *)arg0;
 
@@ -742,6 +766,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetMinHeight;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetMinWidth;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetModelDescPath;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetModelIdPath;
 
