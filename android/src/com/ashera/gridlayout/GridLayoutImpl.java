@@ -436,6 +436,31 @@ Context context = (Context) fragment.getRootActivity();
         	super.drawableStateChanged();
         	ViewImpl.drawableStateChanged(GridLayoutImpl.this);
         }
+        
+        	public void state0() {
+        		ViewImpl.state(GridLayoutImpl.this, 0);
+        	}
+        	public void state1() {
+        		ViewImpl.state(GridLayoutImpl.this, 1);
+        	}
+        	public void state2() {
+        		ViewImpl.state(GridLayoutImpl.this, 2);
+        	}
+        	public void state3() {
+        		ViewImpl.state(GridLayoutImpl.this, 3);
+        	}
+        	public void state4() {
+        		ViewImpl.state(GridLayoutImpl.this, 4);
+        	}
+                        
+        public void stateYes() {
+        	ViewImpl.stateYes(GridLayoutImpl.this);
+        	
+        }
+        
+        public void stateNo() {
+        	ViewImpl.stateNo(GridLayoutImpl.this);
+        }
 	}
 	@Override
 	public Class getViewClass() {
@@ -593,7 +618,7 @@ break;			}
 	public void setId(String id){
 		if (id != null && !id.equals("")){
 			super.setId(id);
-			gridLayout.setId(IdGenerator.getId(id));
+			gridLayout.setId((int) quickConvert(id, "id"));
 		}
 	}
 	
