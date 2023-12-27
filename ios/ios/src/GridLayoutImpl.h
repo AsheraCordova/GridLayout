@@ -324,6 +324,16 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 - (void)setMyAttributeWithNSString:(NSString *)name
                             withId:(id)value;
 
+- (void)setState0WithId:(id)value;
+
+- (void)setState1WithId:(id)value;
+
+- (void)setState2WithId:(id)value;
+
+- (void)setState3WithId:(id)value;
+
+- (void)setState4WithId:(id)value;
+
 - (void)setVisibilityWithInt:(jint)visibility;
 
 - (void)state0;
@@ -390,6 +400,10 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
                                                               withId:(id)arg1;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)addModelWithId:(id)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)animatorXmlWithNSString:(NSString *)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)endAnimator;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)executeWithBoolean:(jboolean)setter;
 
@@ -458,6 +472,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setCustomErrorMessageValuesWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setDuplicateParentStateWithBoolean:(jboolean)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setElevationWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setEnabledWithBoolean:(jboolean)arg0;
 
@@ -577,6 +593,14 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setModelUiToPojoWithNSString:(NSString *)arg0;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnAnimationCancelWithNSString:(NSString *)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnAnimationEndWithNSString:(NSString *)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnAnimationRepeatWithNSString:(NSString *)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnAnimationStartWithNSString:(NSString *)arg0;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnChildViewAddedWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setOnChildViewRemovedWithNSString:(NSString *)arg0;
@@ -670,6 +694,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setVisibilityWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setZIndexWithInt:(jint)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)startAnimator;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetAddStatesFromChildren;
 
