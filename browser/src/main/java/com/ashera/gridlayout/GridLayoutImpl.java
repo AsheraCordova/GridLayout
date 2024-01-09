@@ -145,7 +145,7 @@ public class GridLayoutImpl extends BaseHasWidgets {
         }    
         return remove;
     }
-	
+
 	private void nativeRemoveView(IWidget widget) {
 		r.android.animation.LayoutTransition layoutTransition = gridLayout.getLayoutTransition();
 		if (layoutTransition != null && (
