@@ -13,5 +13,9 @@
       </feature>
     </config-file>
    	<framework src="core.gradle" custom="true" type="gradleReference" />
+   	
+   	<!-- start tsc -->
+     <source-file src="tsc/src/web/widget/GridLayoutImpl.ts" target-dir="tsc/src/web/widget"/>
+     <!-- tsc end -->
   </platform>
 </plugin>

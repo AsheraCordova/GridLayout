@@ -443,6 +443,10 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setAlphaWithFloat:(jfloat)arg0;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setAnimateLayoutChangesWithBoolean:(jboolean)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setAnimateParentHierarchyWithBoolean:(jboolean)arg0;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setAsDragSourceWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setAttributeUnderTestWithNSString:(NSString *)arg0;
@@ -454,6 +458,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setBackgroundTintWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setBackgroundWithNSString:(NSString *)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setBottomWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setChildXmlWithNSString:(NSString *)arg0;
 
@@ -565,6 +571,12 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setLayoutModeWithNSString:(NSString *)arg0;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setLayoutTransitionDurationWithInt:(jint)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setLayoutTransitionWithNSString:(NSString *)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setLeftWithNSString:(NSString *)arg0;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setListitemWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setLongClickableWithBoolean:(jboolean)arg0;
@@ -641,6 +653,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setPaddingWithNSString:(NSString *)arg0;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setRightWithNSString:(NSString *)arg0;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setRotationWithFloat:(jfloat)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setRotationXWithFloat:(jfloat)arg0;
@@ -662,6 +676,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setTextAlignmentWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setTextDirectionWithNSString:(NSString *)arg0;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)setTopWithNSString:(NSString *)arg0;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)setTransformPivotXWithNSString:(NSString *)arg0;
 
@@ -710,6 +726,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetBackgroundTint;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetBackgroundTintMode;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetBottom;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetClickable;
 
@@ -801,6 +819,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetLayoutMode;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetLeft;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetLongClickable;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetMaxHeight;
@@ -837,6 +857,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetPaddingTop;
 
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetRight;
+
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetRotation;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetRotationX;
@@ -856,6 +878,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetTextAlignment;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetTextDirection;
+
+- (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetTop;
 
 - (ASGridLayoutImpl_GridLayoutCommandBuilder *)tryGetTransformPivotX;
 
