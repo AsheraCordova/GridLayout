@@ -20,6 +20,7 @@ import {MotionEvent} from '../../app/MotionEvent';
 import {DragEvent} from '../../app/DragEvent';
 import {KeyEvent} from '../../app/KeyEvent';
 import { ScopedObject } from '../../app/ScopedObject';
+import { Mixin, decorate } from 'ts-mixer';
 
 
 
@@ -43,29 +44,29 @@ export abstract class GridLayoutImpl<T> extends ViewGroupImpl<T>{
 	//start - body
 	static initialize() {
     }	
-	@Type(() => CommandAttr)
-	@Expose({ name: "alignmentMode" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "alignmentMode" }))
 	alignmentMode!:CommandAttr<AlignmentMode>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "columnCount" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "columnCount" }))
 	columnCount!:CommandAttr<number>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "columnOrderPreserved" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "columnOrderPreserved" }))
 	columnOrderPreserved!:CommandAttr<boolean>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "orientation" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "orientation" }))
 	orientation!:CommandAttr<Orientation>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "rowCount" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "rowCount" }))
 	rowCount!:CommandAttr<number>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "rowOrderPreserved" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "rowOrderPreserved" }))
 	rowOrderPreserved!:CommandAttr<boolean>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "useDefaultMargins" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "useDefaultMargins" }))
 	useDefaultMargins!:CommandAttr<boolean>| undefined;
 
-	@Exclude()
+	@decorate(Exclude())
 	protected thisPointer: T;	
 	protected abstract getThisPointer(): T;
 	reset() : T {	
@@ -313,28 +314,28 @@ export abstract class GridLayoutImpl<T> extends ViewGroupImpl<T>{
 }
 //start - staticinit
 export abstract class GridLayoutImpl_LayoutParams<T> extends ViewGroupImpl_LayoutParams<T> {
-	@Type(() => CommandAttr)
-	@Expose({ name: "layout_column" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "layout_column" }))
 	layout_column!:CommandAttr<number>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "layout_columnSpan" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "layout_columnSpan" }))
 	layout_columnSpan!:CommandAttr<number>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "layout_columnWeight" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "layout_columnWeight" }))
 	layout_columnWeight!:CommandAttr<number>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "layout_row" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "layout_row" }))
 	layout_row!:CommandAttr<number>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "layout_rowSpan" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "layout_rowSpan" }))
 	layout_rowSpan!:CommandAttr<number>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "layout_rowWeight" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "layout_rowWeight" }))
 	layout_rowWeight!:CommandAttr<number>| undefined;
-	@Type(() => CommandAttr)
-	@Expose({ name: "layout_gravity" })
+	@decorate(Type(() => CommandAttr))
+	@decorate(Expose({ name: "layout_gravity" }))
 	layout_gravity!:CommandAttr<Gravity[]>| undefined;
-	@Exclude()
+	@decorate(Exclude())
 	protected thisPointer: T;	
 	protected abstract getThisPointer(): T;
 	reset() : T {	
