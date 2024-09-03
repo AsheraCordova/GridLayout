@@ -287,6 +287,7 @@ public class GridLayoutImpl extends BaseHasWidgets {
 	public class GridLayoutExt extends androidx.gridlayout.widget.GridLayout implements ILifeCycleDecorator, com.ashera.widget.IMaxDimension{
 		private MeasureEvent measureFinished = new MeasureEvent();
 		private OnLayoutEvent onLayoutEvent = new OnLayoutEvent();
+		private List<IWidget> overlays;
 		public IWidget getWidget() {
 			return GridLayoutImpl.this;
 		}
@@ -338,9 +339,12 @@ public class GridLayoutImpl extends BaseHasWidgets {
 		protected void onLayout(boolean changed, int l, int t, int r, int b) {
 			super.onLayout(changed, l, t, r, b);
 			ViewImpl.setDrawableBounds(GridLayoutImpl.this, l, t, r, b);
+			if (!isOverlay()) {
 			ViewImpl.nativeMakeFrame(asNativeWidget(), l, t, r, b);
+			}
 			replayBufferedEvents();
 	        ViewImpl.redrawDrawables(GridLayoutImpl.this);
+	        overlays = ViewImpl.drawOverlay(GridLayoutImpl.this, overlays);
 			
 			IWidgetLifeCycleListener listener = (IWidgetLifeCycleListener) getListener();
 			if (listener != null) {
@@ -470,7 +474,7 @@ public class GridLayoutImpl extends BaseHasWidgets {
 				setState4(value);
 				return;
 			}
-			GridLayoutImpl.this.setAttribute(name, value, true);
+			GridLayoutImpl.this.setAttribute(name, value, !(value instanceof String));
 		}
         @Override
         public void setVisibility(int visibility) {
