@@ -137,7 +137,7 @@ public class GridLayoutImpl extends BaseHasWidgets {
 	}
 
 	@Override
-	public boolean remove(IWidget w) {		
+	public boolean remove(IWidget w) {
 		boolean remove = super.remove(w);
 		gridLayout.removeView((View) w.asWidget());
 		 nativeRemoveView(w);            
@@ -410,7 +410,9 @@ public class GridLayoutImpl extends BaseHasWidgets {
         @Override
         public void drawableStateChanged() {
         	super.drawableStateChanged();
-        	ViewImpl.drawableStateChanged(GridLayoutImpl.this);
+        	if (!isWidgetDisposed()) {
+        		ViewImpl.drawableStateChanged(GridLayoutImpl.this);
+        	}
         }
         private Map<String, IWidget> templates;
     	@Override
@@ -423,9 +425,10 @@ public class GridLayoutImpl extends BaseHasWidgets {
     			template = (IWidget) quickConvert(layout, "template");
     			templates.put(layout, template);
     		}
-    		IWidget widget = template.loadLazyWidgets(GridLayoutImpl.this.getParent());
-    		return (View) widget.asWidget();
-    	}        
+    		
+    		IWidget widget = template.loadLazyWidgets(GridLayoutImpl.this);
+			return (View) widget.asWidget();
+    	}   
         
     	@Override
 		public void remeasure() {
@@ -537,6 +540,7 @@ public class GridLayoutImpl extends BaseHasWidgets {
 			super.endViewTransition(view);
 			runBufferedRunnables();
 		}
+	
 	}
 	@Override
 	public Class getViewClass() {
