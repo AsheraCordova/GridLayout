@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-ios-widgets\IOSAndroidXGridlayoutPlugin\src\main\java\com\ashera\gridlayout\GridLayoutImpl.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_GridLayoutImpl")
@@ -25,6 +26,10 @@
 @class ASWidgetAttribute;
 @class ASWidgetAttributeMap;
 @class IOSClass;
+@class JavaLangBoolean;
+@class JavaLangFloat;
+@class JavaLangInteger;
+@class NSString;
 @protocol ASIFragment;
 @protocol ASILifeCycleDecorator;
 @protocol ASIWidget;
@@ -43,15 +48,15 @@
                     withNSString:(NSString *)localname;
 
 - (void)addWithASIWidget:(id<ASIWidget>)w
-                 withInt:(jint)index;
+                 withInt:(int32_t)index;
 
 - (id)asNativeWidget;
 
 - (id)asWidget;
 
-- (jboolean)checkIosVersionWithNSString:(NSString *)v;
+- (bool)checkIosVersionWithNSString:(NSString *)v;
 
-- (jint)convertStringTointWithNSString:(NSString *)str;
+- (int32_t)convertStringTointWithNSString:(NSString *)str;
 
 - (void)createWithASIFragment:(id<ASIFragment>)fragment
               withJavaUtilMap:(id<JavaUtilMap>)params;
@@ -78,9 +83,9 @@
 
 - (id<ASIWidget>)newInstance OBJC_METHOD_FAMILY_NONE;
 
-- (jboolean)removeWithInt:(jint)index;
+- (bool)removeWithInt:(int32_t)index;
 
-- (jboolean)removeWithASIWidget:(id<ASIWidget>)w;
+- (bool)removeWithASIWidget:(id<ASIWidget>)w;
 
 - (void)requestLayout;
 
@@ -96,12 +101,12 @@
 
 - (void)setIdWithNSString:(NSString *)id_;
 
-- (void)setVisibleWithBoolean:(jboolean)b;
+- (void)setVisibleWithBoolean:(bool)b;
 
 #pragma mark Package-Private
 
-- (ADXGridLayout_Alignment *)getAlignmentWithInt:(jint)gravity
-                                     withBoolean:(jboolean)horizontal;
+- (ADXGridLayout_Alignment *)getAlignmentWithInt:(int32_t)gravity
+                                     withBoolean:(bool)horizontal;
 
 @end
 
@@ -117,25 +122,25 @@ inline NSString *ASGridLayoutImpl_get_GROUP_NAME(void);
 FOUNDATION_EXPORT NSString *ASGridLayoutImpl_GROUP_NAME;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(ASGridLayoutImpl, GROUP_NAME, NSString *)
 
-inline jint ASGridLayoutImpl_get_UNDEFINED(void);
-#define ASGridLayoutImpl_UNDEFINED ((jint) 0x80000000)
-J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, UNDEFINED, jint)
+inline int32_t ASGridLayoutImpl_get_UNDEFINED(void);
+#define ASGridLayoutImpl_UNDEFINED ((int32_t) 0x80000000)
+J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, UNDEFINED, int32_t)
 
-inline jint ASGridLayoutImpl_get_DEFAULT_COLUMN(void);
-#define ASGridLayoutImpl_DEFAULT_COLUMN ((jint) 0x80000000)
-J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, DEFAULT_COLUMN, jint)
+inline int32_t ASGridLayoutImpl_get_DEFAULT_COLUMN(void);
+#define ASGridLayoutImpl_DEFAULT_COLUMN ((int32_t) 0x80000000)
+J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, DEFAULT_COLUMN, int32_t)
 
-inline jint ASGridLayoutImpl_get_DEFAULT_SPAN_SIZE(void);
+inline int32_t ASGridLayoutImpl_get_DEFAULT_SPAN_SIZE(void);
 #define ASGridLayoutImpl_DEFAULT_SPAN_SIZE 1
-J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, DEFAULT_SPAN_SIZE, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, DEFAULT_SPAN_SIZE, int32_t)
 
-inline jfloat ASGridLayoutImpl_get_DEFAULT_WEIGHT(void);
+inline float ASGridLayoutImpl_get_DEFAULT_WEIGHT(void);
 #define ASGridLayoutImpl_DEFAULT_WEIGHT 0.0f
-J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, DEFAULT_WEIGHT, jfloat)
+J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, DEFAULT_WEIGHT, float)
 
-inline jint ASGridLayoutImpl_get_DEFAULT_GRAVITY(void);
+inline int32_t ASGridLayoutImpl_get_DEFAULT_GRAVITY(void);
 #define ASGridLayoutImpl_DEFAULT_GRAVITY 0
-J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, DEFAULT_GRAVITY, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ASGridLayoutImpl, DEFAULT_GRAVITY, int32_t)
 
 FOUNDATION_EXPORT void ASGridLayoutImpl_init(ASGridLayoutImpl *self);
 
@@ -158,6 +163,7 @@ FOUNDATION_EXPORT ASGridLayoutImpl *create_ASGridLayoutImpl_initWithNSString_wit
 J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl)
 
 @compatibility_alias ComAsheraGridlayoutGridLayoutImpl ASGridLayoutImpl;
+
 
 #endif
 
@@ -195,6 +201,7 @@ FOUNDATION_EXPORT ASGridLayoutImpl_AlignmentMode *create_ASGridLayoutImpl_Alignm
 
 J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_AlignmentMode)
 
+
 #endif
 
 #if !defined (ASGridLayoutImpl_Orientation_) && (INCLUDE_ALL_GridLayoutImpl || defined(INCLUDE_ASGridLayoutImpl_Orientation))
@@ -231,6 +238,7 @@ FOUNDATION_EXPORT ASGridLayoutImpl_Orientation *create_ASGridLayoutImpl_Orientat
 
 J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 
+
 #endif
 
 #if !defined (ASGridLayoutImpl_GridLayoutExt_) && (INCLUDE_ALL_GridLayoutImpl || defined(INCLUDE_ASGridLayoutImpl_GridLayoutExt))
@@ -254,6 +262,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 @class ASWidgetAttribute;
 @class IOSIntArray;
 @class IOSObjectArray;
+@class JavaLangBoolean;
+@class JavaLangInteger;
+@class NSString;
 @protocol ASIWidget;
 @protocol JavaUtilList;
 
@@ -274,9 +285,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 
 - (void)getLocationOnScreenWithIntArray:(IOSIntArray *)appScreenLocation;
 
-- (jint)getMaxHeight;
+- (int32_t)getMaxHeight;
 
-- (jint)getMaxWidth;
+- (int32_t)getMaxWidth;
 
 - (id<JavaUtilList>)getMethods;
 
@@ -290,12 +301,12 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 
 - (id<ASILifeCycleDecorator>)newInstanceWithASIWidget:(id<ASIWidget>)widget OBJC_METHOD_FAMILY_NONE;
 
-- (void)offsetLeftAndRightWithInt:(jint)offset;
+- (void)offsetLeftAndRightWithInt:(int32_t)offset;
 
-- (void)offsetTopAndBottomWithInt:(jint)offset;
+- (void)offsetTopAndBottomWithInt:(int32_t)offset;
 
-- (void)onMeasureWithInt:(jint)widthMeasureSpec
-                 withInt:(jint)heightMeasureSpec;
+- (void)onMeasureWithInt:(int32_t)widthMeasureSpec
+                 withInt:(int32_t)heightMeasureSpec;
 
 - (void)remeasure;
 
@@ -305,9 +316,9 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
                              withNSString:(NSString *)strValue
                                    withId:(id)objValue;
 
-- (void)setMaxHeightWithInt:(jint)height;
+- (void)setMaxHeightWithInt:(int32_t)height;
 
-- (void)setMaxWidthWithInt:(jint)width;
+- (void)setMaxWidthWithInt:(int32_t)width;
 
 - (void)setMyAttributeWithNSString:(NSString *)name
                             withId:(id)value;
@@ -322,7 +333,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 
 - (void)setState4WithId:(id)value;
 
-- (void)setVisibilityWithInt:(jint)visibility;
+- (void)setVisibilityWithInt:(int32_t)visibility;
 
 - (void)state0;
 
@@ -338,16 +349,16 @@ J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_Orientation)
 
 - (void)stateYes;
 
-- (void)updateMeasuredDimensionWithInt:(jint)width
-                               withInt:(jint)height;
+- (void)updateMeasuredDimensionWithInt:(int32_t)width
+                               withInt:(int32_t)height;
 
 #pragma mark Protected
 
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)l
-                    withInt:(jint)t
-                    withInt:(jint)r
-                    withInt:(jint)b;
+- (void)onLayoutWithBoolean:(bool)changed
+                    withInt:(int32_t)l
+                    withInt:(int32_t)t
+                    withInt:(int32_t)r
+                    withInt:(int32_t)b;
 
 // Disallowed inherited constructors, do not use.
 
@@ -364,6 +375,7 @@ FOUNDATION_EXPORT ASGridLayoutImpl_GridLayoutExt *new_ASGridLayoutImpl_GridLayou
 FOUNDATION_EXPORT ASGridLayoutImpl_GridLayoutExt *create_ASGridLayoutImpl_GridLayoutExt_initWithASGridLayoutImpl_(ASGridLayoutImpl *outer$);
 
 J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutImpl_GridLayoutExt)
+
 
 #endif
 

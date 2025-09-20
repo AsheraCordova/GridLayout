@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-javafx-widget\SWTAndroidX-Gridlayout\src\main\java\androidx\gridlayout\widget\GridLayout.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_GridLayout")
@@ -29,16 +30,20 @@
 @class ADXGridLayout_Spec;
 @class IOSIntArray;
 @class IOSObjectArray;
+@class JavaLangBoolean;
+@class JavaLangFloat;
+@class JavaLangInteger;
+@class NSString;
 
 @interface ADXGridLayout : ADViewGroup {
  @public
   ADXGridLayout_Axis *mHorizontalAxis_;
   ADXGridLayout_Axis *mVerticalAxis_;
-  jint mOrientation_;
-  jboolean mUseDefaultMargins_;
-  jint mAlignmentMode_;
-  jint mDefaultGap_;
-  jint mLastLayoutParamsHashCode_;
+  int32_t mOrientation_;
+  bool mUseDefaultMargins_;
+  int32_t mAlignmentMode_;
+  int32_t mDefaultGap_;
+  int32_t mLastLayoutParamsHashCode_;
   ADXGridLayout_Printer *LOG_PRINTER_;
   ADXGridLayout_Printer *mPrinter_;
 }
@@ -47,104 +52,104 @@
 
 - (instancetype)init;
 
-- (jint)getAlignmentMode;
+- (int32_t)getAlignmentMode;
 
-- (jint)getColumnCount;
+- (int32_t)getColumnCount;
 
-- (jint)getOrientation;
+- (int32_t)getOrientation;
 
-- (jint)getRowCount;
+- (int32_t)getRowCount;
 
-- (jboolean)getUseDefaultMargins;
+- (bool)getUseDefaultMargins;
 
-- (jboolean)isColumnOrderPreserved;
+- (bool)isColumnOrderPreserved;
 
-- (jboolean)isRowOrderPreserved;
+- (bool)isRowOrderPreserved;
 
 - (void)requestLayout;
 
-- (void)setAlignmentModeWithInt:(jint)alignmentMode;
+- (void)setAlignmentModeWithInt:(int32_t)alignmentMode;
 
-- (void)setColumnCountWithInt:(jint)columnCount;
+- (void)setColumnCountWithInt:(int32_t)columnCount;
 
-- (void)setColumnOrderPreservedWithBoolean:(jboolean)columnOrderPreserved;
+- (void)setColumnOrderPreservedWithBoolean:(bool)columnOrderPreserved;
 
-- (void)setOrientationWithInt:(jint)orientation;
+- (void)setOrientationWithInt:(int32_t)orientation;
 
-- (void)setRowCountWithInt:(jint)rowCount;
+- (void)setRowCountWithInt:(int32_t)rowCount;
 
-- (void)setRowOrderPreservedWithBoolean:(jboolean)rowOrderPreserved;
+- (void)setRowOrderPreservedWithBoolean:(bool)rowOrderPreserved;
 
-- (void)setUseDefaultMarginsWithBoolean:(jboolean)useDefaultMargins;
+- (void)setUseDefaultMarginsWithBoolean:(bool)useDefaultMargins;
 
-+ (ADXGridLayout_Spec *)specWithInt:(jint)start;
++ (ADXGridLayout_Spec *)specWithInt:(int32_t)start;
 
-+ (ADXGridLayout_Spec *)specWithInt:(jint)start
++ (ADXGridLayout_Spec *)specWithInt:(int32_t)start
         withADXGridLayout_Alignment:(ADXGridLayout_Alignment *)alignment;
 
-+ (ADXGridLayout_Spec *)specWithInt:(jint)start
++ (ADXGridLayout_Spec *)specWithInt:(int32_t)start
         withADXGridLayout_Alignment:(ADXGridLayout_Alignment *)alignment
-                          withFloat:(jfloat)weight;
+                          withFloat:(float)weight;
 
-+ (ADXGridLayout_Spec *)specWithInt:(jint)start
-                          withFloat:(jfloat)weight;
++ (ADXGridLayout_Spec *)specWithInt:(int32_t)start
+                          withFloat:(float)weight;
 
-+ (ADXGridLayout_Spec *)specWithInt:(jint)start
-                            withInt:(jint)size;
++ (ADXGridLayout_Spec *)specWithInt:(int32_t)start
+                            withInt:(int32_t)size;
 
-+ (ADXGridLayout_Spec *)specWithInt:(jint)start
-                            withInt:(jint)size
++ (ADXGridLayout_Spec *)specWithInt:(int32_t)start
+                            withInt:(int32_t)size
         withADXGridLayout_Alignment:(ADXGridLayout_Alignment *)alignment;
 
-+ (ADXGridLayout_Spec *)specWithInt:(jint)start
-                            withInt:(jint)size
++ (ADXGridLayout_Spec *)specWithInt:(int32_t)start
+                            withInt:(int32_t)size
         withADXGridLayout_Alignment:(ADXGridLayout_Alignment *)alignment
-                          withFloat:(jfloat)weight;
+                          withFloat:(float)weight;
 
-+ (ADXGridLayout_Spec *)specWithInt:(jint)start
-                            withInt:(jint)size
-                          withFloat:(jfloat)weight;
++ (ADXGridLayout_Spec *)specWithInt:(int32_t)start
+                            withInt:(int32_t)size
+                          withFloat:(float)weight;
 
 #pragma mark Protected
 
-- (jboolean)checkLayoutParamsWithADViewGroup_LayoutParams:(ADViewGroup_LayoutParams *)p;
+- (bool)checkLayoutParamsWithADViewGroup_LayoutParams:(ADViewGroup_LayoutParams *)p;
 
 - (ADXGridLayout_LayoutParams *)generateDefaultLayoutParams;
 
 - (ADXGridLayout_LayoutParams *)generateLayoutParamsWithADViewGroup_LayoutParams:(ADViewGroup_LayoutParams *)lp;
 
-- (void)onLayoutWithBoolean:(jboolean)changed
-                    withInt:(jint)left
-                    withInt:(jint)top
-                    withInt:(jint)right
-                    withInt:(jint)bottom;
+- (void)onLayoutWithBoolean:(bool)changed
+                    withInt:(int32_t)left
+                    withInt:(int32_t)top
+                    withInt:(int32_t)right
+                    withInt:(int32_t)bottom;
 
-- (void)onMeasureWithInt:(jint)widthSpec
-                 withInt:(jint)heightSpec;
+- (void)onMeasureWithInt:(int32_t)widthSpec
+                 withInt:(int32_t)heightSpec;
 
 #pragma mark Package-Private
 
-+ (jint)adjustWithInt:(jint)measureSpec
-              withInt:(jint)delta;
++ (int32_t)adjustWithInt:(int32_t)measureSpec
+                 withInt:(int32_t)delta;
 
 + (IOSObjectArray *)appendWithNSObjectArray:(IOSObjectArray *)a
                           withNSObjectArray:(IOSObjectArray *)b;
 
-+ (jboolean)canStretchWithInt:(jint)flexibility;
++ (bool)canStretchWithInt:(int32_t)flexibility;
 
 - (ADXGridLayout_LayoutParams *)getLayoutParamsWithADView:(ADView *)c;
 
-- (jint)getMargin1WithADView:(ADView *)view
-                 withBoolean:(jboolean)horizontal
-                 withBoolean:(jboolean)leading;
+- (int32_t)getMargin1WithADView:(ADView *)view
+                    withBoolean:(bool)horizontal
+                    withBoolean:(bool)leading;
 
-- (jint)getMeasurementIncludingMarginWithADView:(ADView *)c
-                                    withBoolean:(jboolean)horizontal;
+- (int32_t)getMeasurementIncludingMarginWithADView:(ADView *)c
+                                       withBoolean:(bool)horizontal;
 
 + (void)handleInvalidParamsWithNSString:(NSString *)msg;
 
-+ (jint)max2WithIntArray:(IOSIntArray *)a
-                 withInt:(jint)valueIfEmpty;
++ (int32_t)max2WithIntArray:(IOSIntArray *)a
+                    withInt:(int32_t)valueIfEmpty;
 
 @end
 
@@ -155,41 +160,41 @@ J2OBJC_FIELD_SETTER(ADXGridLayout, mVerticalAxis_, ADXGridLayout_Axis *)
 J2OBJC_FIELD_SETTER(ADXGridLayout, LOG_PRINTER_, ADXGridLayout_Printer *)
 J2OBJC_FIELD_SETTER(ADXGridLayout, mPrinter_, ADXGridLayout_Printer *)
 
-inline jint ADXGridLayout_get_HORIZONTAL(void);
+inline int32_t ADXGridLayout_get_HORIZONTAL(void);
 #define ADXGridLayout_HORIZONTAL 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, HORIZONTAL, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, HORIZONTAL, int32_t)
 
-inline jint ADXGridLayout_get_VERTICAL(void);
+inline int32_t ADXGridLayout_get_VERTICAL(void);
 #define ADXGridLayout_VERTICAL 1
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, VERTICAL, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, VERTICAL, int32_t)
 
-inline jint ADXGridLayout_get_UNDEFINED(void);
-#define ADXGridLayout_UNDEFINED ((jint) 0x80000000)
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, UNDEFINED, jint)
+inline int32_t ADXGridLayout_get_UNDEFINED(void);
+#define ADXGridLayout_UNDEFINED ((int32_t) 0x80000000)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, UNDEFINED, int32_t)
 
-inline jint ADXGridLayout_get_ALIGN_BOUNDS(void);
+inline int32_t ADXGridLayout_get_ALIGN_BOUNDS(void);
 #define ADXGridLayout_ALIGN_BOUNDS 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, ALIGN_BOUNDS, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, ALIGN_BOUNDS, int32_t)
 
-inline jint ADXGridLayout_get_ALIGN_MARGINS(void);
+inline int32_t ADXGridLayout_get_ALIGN_MARGINS(void);
 #define ADXGridLayout_ALIGN_MARGINS 1
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, ALIGN_MARGINS, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, ALIGN_MARGINS, int32_t)
 
-inline jint ADXGridLayout_get_MAX_SIZE(void);
+inline int32_t ADXGridLayout_get_MAX_SIZE(void);
 #define ADXGridLayout_MAX_SIZE 100000
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, MAX_SIZE, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, MAX_SIZE, int32_t)
 
-inline jint ADXGridLayout_get_DEFAULT_CONTAINER_MARGIN(void);
+inline int32_t ADXGridLayout_get_DEFAULT_CONTAINER_MARGIN(void);
 #define ADXGridLayout_DEFAULT_CONTAINER_MARGIN 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, DEFAULT_CONTAINER_MARGIN, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, DEFAULT_CONTAINER_MARGIN, int32_t)
 
-inline jint ADXGridLayout_get_UNINITIALIZED_HASH(void);
+inline int32_t ADXGridLayout_get_UNINITIALIZED_HASH(void);
 #define ADXGridLayout_UNINITIALIZED_HASH 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, UNINITIALIZED_HASH, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, UNINITIALIZED_HASH, int32_t)
 
-inline jboolean ADXGridLayout_get_DEFAULT_ORDER_PRESERVED(void);
+inline bool ADXGridLayout_get_DEFAULT_ORDER_PRESERVED(void);
 #define ADXGridLayout_DEFAULT_ORDER_PRESERVED true
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, DEFAULT_ORDER_PRESERVED, jboolean)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, DEFAULT_ORDER_PRESERVED, bool)
 
 inline ADXGridLayout_Alignment *ADXGridLayout_get_UNDEFINED_ALIGNMENT(void);
 /*! INTERNAL ONLY - Use accessor function from above. */
@@ -241,39 +246,39 @@ inline ADXGridLayout_Alignment *ADXGridLayout_get_FILL(void);
 FOUNDATION_EXPORT ADXGridLayout_Alignment *ADXGridLayout_FILL;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(ADXGridLayout, FILL, ADXGridLayout_Alignment *)
 
-inline jint ADXGridLayout_get_INFLEXIBLE(void);
+inline int32_t ADXGridLayout_get_INFLEXIBLE(void);
 #define ADXGridLayout_INFLEXIBLE 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, INFLEXIBLE, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, INFLEXIBLE, int32_t)
 
-inline jint ADXGridLayout_get_CAN_STRETCH(void);
+inline int32_t ADXGridLayout_get_CAN_STRETCH(void);
 #define ADXGridLayout_CAN_STRETCH 2
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, CAN_STRETCH, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout, CAN_STRETCH, int32_t)
 
-FOUNDATION_EXPORT jint ADXGridLayout_max2WithIntArray_withInt_(IOSIntArray *a, jint valueIfEmpty);
+FOUNDATION_EXPORT int32_t ADXGridLayout_max2WithIntArray_withInt_(IOSIntArray *a, int32_t valueIfEmpty);
 
 FOUNDATION_EXPORT IOSObjectArray *ADXGridLayout_appendWithNSObjectArray_withNSObjectArray_(IOSObjectArray *a, IOSObjectArray *b);
 
 FOUNDATION_EXPORT void ADXGridLayout_handleInvalidParamsWithNSString_(NSString *msg);
 
-FOUNDATION_EXPORT jint ADXGridLayout_adjustWithInt_withInt_(jint measureSpec, jint delta);
+FOUNDATION_EXPORT int32_t ADXGridLayout_adjustWithInt_withInt_(int32_t measureSpec, int32_t delta);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withInt_withADXGridLayout_Alignment_withFloat_(jint start, jint size, ADXGridLayout_Alignment *alignment, jfloat weight);
+FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withInt_withADXGridLayout_Alignment_withFloat_(int32_t start, int32_t size, ADXGridLayout_Alignment *alignment, float weight);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withADXGridLayout_Alignment_withFloat_(jint start, ADXGridLayout_Alignment *alignment, jfloat weight);
+FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withADXGridLayout_Alignment_withFloat_(int32_t start, ADXGridLayout_Alignment *alignment, float weight);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withInt_withFloat_(jint start, jint size, jfloat weight);
+FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withInt_withFloat_(int32_t start, int32_t size, float weight);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withFloat_(jint start, jfloat weight);
+FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withFloat_(int32_t start, float weight);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withInt_withADXGridLayout_Alignment_(jint start, jint size, ADXGridLayout_Alignment *alignment);
+FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withInt_withADXGridLayout_Alignment_(int32_t start, int32_t size, ADXGridLayout_Alignment *alignment);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withADXGridLayout_Alignment_(jint start, ADXGridLayout_Alignment *alignment);
+FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withADXGridLayout_Alignment_(int32_t start, ADXGridLayout_Alignment *alignment);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withInt_(jint start, jint size);
+FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_withInt_(int32_t start, int32_t size);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_(jint start);
+FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_specWithInt_(int32_t start);
 
-FOUNDATION_EXPORT jboolean ADXGridLayout_canStretchWithInt_(jint flexibility);
+FOUNDATION_EXPORT bool ADXGridLayout_canStretchWithInt_(int32_t flexibility);
 
 FOUNDATION_EXPORT void ADXGridLayout_init(ADXGridLayout *self);
 
@@ -285,6 +290,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout)
 
 @compatibility_alias AndroidxGridlayoutWidgetGridLayout ADXGridLayout;
 
+
 #endif
 
 #if !defined (ADXGridLayout_Axis_) && (INCLUDE_ALL_GridLayout || defined(INCLUDE_ADXGridLayout_Axis))
@@ -294,36 +300,38 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout)
 @class ADXGridLayout_PackedMap;
 @class IOSIntArray;
 @class IOSObjectArray;
+@class JavaLangBoolean;
+@class JavaLangInteger;
 
 @interface ADXGridLayout_Axis : NSObject {
  @public
-  jboolean horizontal_;
-  jint definedCount_;
+  bool horizontal_;
+  int32_t definedCount_;
   ADXGridLayout_PackedMap *groupBounds_;
-  jboolean groupBoundsValid_;
+  bool groupBoundsValid_;
   ADXGridLayout_PackedMap *forwardLinks_;
-  jboolean forwardLinksValid_;
+  bool forwardLinksValid_;
   ADXGridLayout_PackedMap *backwardLinks_;
-  jboolean backwardLinksValid_;
+  bool backwardLinksValid_;
   IOSIntArray *leadingMargins_;
-  jboolean leadingMarginsValid_;
+  bool leadingMarginsValid_;
   IOSIntArray *trailingMargins_;
-  jboolean trailingMarginsValid_;
+  bool trailingMarginsValid_;
   IOSObjectArray *arcs_;
-  jboolean arcsValid_;
+  bool arcsValid_;
   IOSIntArray *locations_;
-  jboolean locationsValid_;
-  jboolean hasWeights_;
-  jboolean hasWeightsValid_;
+  bool locationsValid_;
+  bool hasWeights_;
+  bool hasWeightsValid_;
   IOSIntArray *deltas_;
-  jboolean orderPreserved_;
+  bool orderPreserved_;
 }
 
 #pragma mark Public
 
 - (IOSObjectArray *)getArcs;
 
-- (jint)getCount;
+- (int32_t)getCount;
 
 - (IOSIntArray *)getDeltas;
 
@@ -333,7 +341,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout)
 
 - (IOSIntArray *)getLocations;
 
-- (jint)getMeasureWithInt:(jint)measureSpec;
+- (int32_t)getMeasureWithInt:(int32_t)measureSpec;
 
 - (IOSIntArray *)getTrailingMargins;
 
@@ -341,18 +349,18 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout)
 
 - (void)invalidateValues;
 
-- (jboolean)isOrderPreserved;
+- (bool)isOrderPreserved;
 
-- (void)layoutWithInt:(jint)size;
+- (void)layoutWithInt:(int32_t)size;
 
-- (void)setCountWithInt:(jint)count;
+- (void)setCountWithInt:(int32_t)count;
 
-- (void)setOrderPreservedWithBoolean:(jboolean)orderPreserved;
+- (void)setOrderPreservedWithBoolean:(bool)orderPreserved;
 
 #pragma mark Package-Private
 
 - (instancetype)initWithADXGridLayout:(ADXGridLayout *)outer$
-                          withBoolean:(jboolean)horizontal;
+                          withBoolean:(bool)horizontal;
 
 - (IOSObjectArray *)groupArcsByFirstVertexWithADXGridLayout_ArcArray:(IOSObjectArray *)arcs;
 
@@ -373,25 +381,26 @@ J2OBJC_FIELD_SETTER(ADXGridLayout_Axis, arcs_, IOSObjectArray *)
 J2OBJC_FIELD_SETTER(ADXGridLayout_Axis, locations_, IOSIntArray *)
 J2OBJC_FIELD_SETTER(ADXGridLayout_Axis, deltas_, IOSIntArray *)
 
-inline jint ADXGridLayout_Axis_get_NEW(void);
+inline int32_t ADXGridLayout_Axis_get_NEW(void);
 #define ADXGridLayout_Axis_NEW 0
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout_Axis, NEW, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout_Axis, NEW, int32_t)
 
-inline jint ADXGridLayout_Axis_get_PENDING(void);
+inline int32_t ADXGridLayout_Axis_get_PENDING(void);
 #define ADXGridLayout_Axis_PENDING 1
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout_Axis, PENDING, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout_Axis, PENDING, int32_t)
 
-inline jint ADXGridLayout_Axis_get_COMPLETE(void);
+inline int32_t ADXGridLayout_Axis_get_COMPLETE(void);
 #define ADXGridLayout_Axis_COMPLETE 2
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout_Axis, COMPLETE, jint)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout_Axis, COMPLETE, int32_t)
 
-FOUNDATION_EXPORT void ADXGridLayout_Axis_initWithADXGridLayout_withBoolean_(ADXGridLayout_Axis *self, ADXGridLayout *outer$, jboolean horizontal);
+FOUNDATION_EXPORT void ADXGridLayout_Axis_initWithADXGridLayout_withBoolean_(ADXGridLayout_Axis *self, ADXGridLayout *outer$, bool horizontal);
 
-FOUNDATION_EXPORT ADXGridLayout_Axis *new_ADXGridLayout_Axis_initWithADXGridLayout_withBoolean_(ADXGridLayout *outer$, jboolean horizontal) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT ADXGridLayout_Axis *new_ADXGridLayout_Axis_initWithADXGridLayout_withBoolean_(ADXGridLayout *outer$, bool horizontal) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ADXGridLayout_Axis *create_ADXGridLayout_Axis_initWithADXGridLayout_withBoolean_(ADXGridLayout *outer$, jboolean horizontal);
+FOUNDATION_EXPORT ADXGridLayout_Axis *create_ADXGridLayout_Axis_initWithADXGridLayout_withBoolean_(ADXGridLayout *outer$, bool horizontal);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Axis)
+
 
 #endif
 
@@ -405,6 +414,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Axis)
 @class ADViewGroup_LayoutParams;
 @class ADXGridLayout_Interval;
 @class ADXGridLayout_Spec;
+@class JavaLangInteger;
 
 @interface ADXGridLayout_LayoutParams : ADViewGroup_MarginLayoutParams {
  @public
@@ -433,8 +443,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Axis)
 
 - (instancetype)initWithADViewGroup_MarginLayoutParams:(ADViewGroup_MarginLayoutParams *)arg0 NS_UNAVAILABLE;
 
-- (instancetype)initWithInt:(jint)arg0
-                    withInt:(jint)arg1 NS_UNAVAILABLE;
+- (instancetype)initWithInt:(int32_t)arg0
+                    withInt:(int32_t)arg1 NS_UNAVAILABLE;
 
 @end
 
@@ -469,6 +479,7 @@ FOUNDATION_EXPORT ADXGridLayout_LayoutParams *create_ADXGridLayout_LayoutParams_
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_LayoutParams)
 
+
 #endif
 
 #if !defined (ADXGridLayout_Arc_) && (INCLUDE_ALL_GridLayout || defined(INCLUDE_ADXGridLayout_Arc))
@@ -476,12 +487,14 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_LayoutParams)
 
 @class ADXGridLayout_Interval;
 @class ADXGridLayout_MutableInt;
+@class JavaLangBoolean;
+@class NSString;
 
 @interface ADXGridLayout_Arc : NSObject {
  @public
   ADXGridLayout_Interval *span_;
   ADXGridLayout_MutableInt *value_;
-  jboolean valid_;
+  bool valid_;
 }
 
 #pragma mark Public
@@ -510,21 +523,25 @@ FOUNDATION_EXPORT ADXGridLayout_Arc *create_ADXGridLayout_Arc_initWithADXGridLay
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Arc)
 
+
 #endif
 
 #if !defined (ADXGridLayout_MutableInt_) && (INCLUDE_ALL_GridLayout || defined(INCLUDE_ADXGridLayout_MutableInt))
 #define ADXGridLayout_MutableInt_
 
+@class JavaLangInteger;
+@class NSString;
+
 @interface ADXGridLayout_MutableInt : NSObject {
  @public
-  jint value_;
+  int32_t value_;
 }
 
 #pragma mark Public
 
 - (instancetype)init;
 
-- (instancetype)initWithInt:(jint)value;
+- (instancetype)initWithInt:(int32_t)value;
 
 - (void)reset;
 
@@ -540,13 +557,14 @@ FOUNDATION_EXPORT ADXGridLayout_MutableInt *new_ADXGridLayout_MutableInt_init(vo
 
 FOUNDATION_EXPORT ADXGridLayout_MutableInt *create_ADXGridLayout_MutableInt_init(void);
 
-FOUNDATION_EXPORT void ADXGridLayout_MutableInt_initWithInt_(ADXGridLayout_MutableInt *self, jint value);
+FOUNDATION_EXPORT void ADXGridLayout_MutableInt_initWithInt_(ADXGridLayout_MutableInt *self, int32_t value);
 
-FOUNDATION_EXPORT ADXGridLayout_MutableInt *new_ADXGridLayout_MutableInt_initWithInt_(jint value) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT ADXGridLayout_MutableInt *new_ADXGridLayout_MutableInt_initWithInt_(int32_t value) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ADXGridLayout_MutableInt *create_ADXGridLayout_MutableInt_initWithInt_(jint value);
+FOUNDATION_EXPORT ADXGridLayout_MutableInt *create_ADXGridLayout_MutableInt_initWithInt_(int32_t value);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_MutableInt)
+
 
 #endif
 
@@ -560,13 +578,14 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_MutableInt)
 @class ADPair;
 @class ADXGridLayout_PackedMap;
 @class IOSClass;
+@class JavaLangInteger;
 @protocol JavaUtilCollection;
 
 @interface ADXGridLayout_Assoc : JavaUtilArrayList
 
 #pragma mark Public
 
-- (ADPair *)getWithInt:(jint)arg0;
+- (ADPair *)getWithInt:(int32_t)arg0;
 
 + (ADXGridLayout_Assoc *)ofWithIOSClass:(IOSClass *)keyType
                            withIOSClass:(IOSClass *)valueType;
@@ -576,18 +595,20 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_MutableInt)
 - (void)putWithId:(id)key
            withId:(id)value;
 
-- (ADPair *)removeWithInt:(jint)arg0;
+- (ADPair *)removeWithInt:(int32_t)arg0;
 
-- (ADPair *)setWithInt:(jint)arg0
-                withId:(ADPair *)arg1;
+- (ADPair *)setWithInt:(int32_t)arg0
+                withId:(id)arg1;
 
 #pragma mark Package-Private
+
+- (ADPair *)elementDataWithInt:(int32_t)arg0;
 
 // Disallowed inherited constructors, do not use.
 
 - (instancetype)init NS_UNAVAILABLE;
 
-- (instancetype)initWithInt:(jint)arg0 NS_UNAVAILABLE;
+- (instancetype)initWithInt:(int32_t)arg0 NS_UNAVAILABLE;
 
 - (instancetype)initWithJavaUtilCollection:(id<JavaUtilCollection>)arg0 NS_UNAVAILABLE;
 
@@ -599,6 +620,7 @@ FOUNDATION_EXPORT ADXGridLayout_Assoc *ADXGridLayout_Assoc_ofWithIOSClass_withIO
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Assoc)
 
+
 #endif
 
 #if !defined (ADXGridLayout_PackedMap_) && (INCLUDE_ALL_GridLayout || defined(INCLUDE_ADXGridLayout_PackedMap))
@@ -606,6 +628,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Assoc)
 
 @class IOSIntArray;
 @class IOSObjectArray;
+@class JavaLangInteger;
 
 @interface ADXGridLayout_PackedMap : NSObject {
  @public
@@ -616,7 +639,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Assoc)
 
 #pragma mark Public
 
-- (id)getValueWithInt:(jint)i;
+- (id)getValueWithInt:(int32_t)i;
 
 #pragma mark Package-Private
 
@@ -643,6 +666,7 @@ FOUNDATION_EXPORT ADXGridLayout_PackedMap *create_ADXGridLayout_PackedMap_initWi
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_PackedMap)
 
+
 #endif
 
 #if !defined (ADXGridLayout_Bounds_) && (INCLUDE_ALL_GridLayout || defined(INCLUDE_ADXGridLayout_Bounds))
@@ -653,12 +677,15 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_PackedMap)
 @class ADXGridLayout_Alignment;
 @class ADXGridLayout_Axis;
 @class ADXGridLayout_Spec;
+@class JavaLangBoolean;
+@class JavaLangInteger;
+@class NSString;
 
 @interface ADXGridLayout_Bounds : NSObject {
  @public
-  jint before_;
-  jint after_;
-  jint flexibility_;
+  int32_t before_;
+  int32_t after_;
+  int32_t flexibility_;
 }
 
 #pragma mark Public
@@ -667,24 +694,24 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_PackedMap)
 
 #pragma mark Protected
 
-- (jint)getOffsetWithADXGridLayout:(ADXGridLayout *)gl
-                        withADView:(ADView *)c
-       withADXGridLayout_Alignment:(ADXGridLayout_Alignment *)a
-                           withInt:(jint)size
-                       withBoolean:(jboolean)horizontal;
+- (int32_t)getOffsetWithADXGridLayout:(ADXGridLayout *)gl
+                           withADView:(ADView *)c
+          withADXGridLayout_Alignment:(ADXGridLayout_Alignment *)a
+                              withInt:(int32_t)size
+                          withBoolean:(bool)horizontal;
 
 - (void)includeWithADXGridLayout:(ADXGridLayout *)gl
                       withADView:(ADView *)c
           withADXGridLayout_Spec:(ADXGridLayout_Spec *)spec
           withADXGridLayout_Axis:(ADXGridLayout_Axis *)axis
-                         withInt:(jint)size;
+                         withInt:(int32_t)size;
 
-- (void)includeWithInt:(jint)before
-               withInt:(jint)after;
+- (void)includeWithInt:(int32_t)before
+               withInt:(int32_t)after;
 
 - (void)reset;
 
-- (jint)sizeWithBoolean:(jboolean)min;
+- (int32_t)sizeWithBoolean:(bool)min;
 
 #pragma mark Package-Private
 
@@ -702,23 +729,28 @@ FOUNDATION_EXPORT ADXGridLayout_Bounds *create_ADXGridLayout_Bounds_init(void);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Bounds)
 
+
 #endif
 
 #if !defined (ADXGridLayout_Interval_) && (INCLUDE_ALL_GridLayout || defined(INCLUDE_ADXGridLayout_Interval))
 #define ADXGridLayout_Interval_
 
+@class JavaLangBoolean;
+@class JavaLangInteger;
+@class NSString;
+
 @interface ADXGridLayout_Interval : NSObject {
  @public
-  jint min_;
-  jint max_;
+  int32_t min_;
+  int32_t max_;
 }
 
 #pragma mark Public
 
-- (instancetype)initWithInt:(jint)min
-                    withInt:(jint)max;
+- (instancetype)initWithInt:(int32_t)min
+                    withInt:(int32_t)max;
 
-- (jboolean)isEqual:(id)that;
+- (bool)isEqual:(id)that;
 
 - (NSUInteger)hash;
 
@@ -728,7 +760,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Bounds)
 
 - (ADXGridLayout_Interval *)inverse;
 
-- (jint)size;
+- (int32_t)size;
 
 // Disallowed inherited constructors, do not use.
 
@@ -738,13 +770,14 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Bounds)
 
 J2OBJC_EMPTY_STATIC_INIT(ADXGridLayout_Interval)
 
-FOUNDATION_EXPORT void ADXGridLayout_Interval_initWithInt_withInt_(ADXGridLayout_Interval *self, jint min, jint max);
+FOUNDATION_EXPORT void ADXGridLayout_Interval_initWithInt_withInt_(ADXGridLayout_Interval *self, int32_t min, int32_t max);
 
-FOUNDATION_EXPORT ADXGridLayout_Interval *new_ADXGridLayout_Interval_initWithInt_withInt_(jint min, jint max) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT ADXGridLayout_Interval *new_ADXGridLayout_Interval_initWithInt_withInt_(int32_t min, int32_t max) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ADXGridLayout_Interval *create_ADXGridLayout_Interval_initWithInt_withInt_(jint min, jint max);
+FOUNDATION_EXPORT ADXGridLayout_Interval *create_ADXGridLayout_Interval_initWithInt_withInt_(int32_t min, int32_t max);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Interval)
+
 
 #endif
 
@@ -753,36 +786,39 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Interval)
 
 @class ADXGridLayout_Alignment;
 @class ADXGridLayout_Interval;
+@class JavaLangBoolean;
+@class JavaLangFloat;
+@class JavaLangInteger;
 
 @interface ADXGridLayout_Spec : NSObject {
  @public
-  jboolean startDefined_;
+  bool startDefined_;
   ADXGridLayout_Interval *span_;
   ADXGridLayout_Alignment *alignment_;
-  jfloat weight_;
+  float weight_;
 }
 
 #pragma mark Public
 
-- (jboolean)isEqual:(id)that;
+- (bool)isEqual:(id)that;
 
-- (ADXGridLayout_Alignment *)getAbsoluteAlignmentWithBoolean:(jboolean)horizontal;
+- (ADXGridLayout_Alignment *)getAbsoluteAlignmentWithBoolean:(bool)horizontal;
 
 - (NSUInteger)hash;
 
 #pragma mark Package-Private
 
-- (instancetype)initWithBoolean:(jboolean)startDefined
-                        withInt:(jint)start
-                        withInt:(jint)size
+- (instancetype)initWithBoolean:(bool)startDefined
+                        withInt:(int32_t)start
+                        withInt:(int32_t)size
     withADXGridLayout_Alignment:(ADXGridLayout_Alignment *)alignment
-                      withFloat:(jfloat)weight;
+                      withFloat:(float)weight;
 
 - (ADXGridLayout_Spec *)copyWriteAlignmentWithADXGridLayout_Alignment:(ADXGridLayout_Alignment *)alignment OBJC_METHOD_FAMILY_NONE;
 
 - (ADXGridLayout_Spec *)copyWriteSpanWithADXGridLayout_Interval:(ADXGridLayout_Interval *)span OBJC_METHOD_FAMILY_NONE;
 
-- (jint)getFlexibility;
+- (int32_t)getFlexibility;
 
 // Disallowed inherited constructors, do not use.
 
@@ -800,17 +836,18 @@ inline ADXGridLayout_Spec *ADXGridLayout_Spec_get_UNDEFINED(void);
 FOUNDATION_EXPORT ADXGridLayout_Spec *ADXGridLayout_Spec_UNDEFINED;
 J2OBJC_STATIC_FIELD_OBJ_FINAL(ADXGridLayout_Spec, UNDEFINED, ADXGridLayout_Spec *)
 
-inline jfloat ADXGridLayout_Spec_get_DEFAULT_WEIGHT(void);
+inline float ADXGridLayout_Spec_get_DEFAULT_WEIGHT(void);
 #define ADXGridLayout_Spec_DEFAULT_WEIGHT 0.0f
-J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout_Spec, DEFAULT_WEIGHT, jfloat)
+J2OBJC_STATIC_FIELD_CONSTANT(ADXGridLayout_Spec, DEFAULT_WEIGHT, float)
 
-FOUNDATION_EXPORT void ADXGridLayout_Spec_initWithBoolean_withInt_withInt_withADXGridLayout_Alignment_withFloat_(ADXGridLayout_Spec *self, jboolean startDefined, jint start, jint size, ADXGridLayout_Alignment *alignment, jfloat weight);
+FOUNDATION_EXPORT void ADXGridLayout_Spec_initWithBoolean_withInt_withInt_withADXGridLayout_Alignment_withFloat_(ADXGridLayout_Spec *self, bool startDefined, int32_t start, int32_t size, ADXGridLayout_Alignment *alignment, float weight);
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *new_ADXGridLayout_Spec_initWithBoolean_withInt_withInt_withADXGridLayout_Alignment_withFloat_(jboolean startDefined, jint start, jint size, ADXGridLayout_Alignment *alignment, jfloat weight) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT ADXGridLayout_Spec *new_ADXGridLayout_Spec_initWithBoolean_withInt_withInt_withADXGridLayout_Alignment_withFloat_(bool startDefined, int32_t start, int32_t size, ADXGridLayout_Alignment *alignment, float weight) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT ADXGridLayout_Spec *create_ADXGridLayout_Spec_initWithBoolean_withInt_withInt_withADXGridLayout_Alignment_withFloat_(jboolean startDefined, jint start, jint size, ADXGridLayout_Alignment *alignment, jfloat weight);
+FOUNDATION_EXPORT ADXGridLayout_Spec *create_ADXGridLayout_Spec_initWithBoolean_withInt_withInt_withADXGridLayout_Alignment_withFloat_(bool startDefined, int32_t start, int32_t size, ADXGridLayout_Alignment *alignment, float weight);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Spec)
+
 
 #endif
 
@@ -819,6 +856,8 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Spec)
 
 @class ADView;
 @class ADXGridLayout_Bounds;
+@class JavaLangInteger;
+@class NSString;
 
 @interface ADXGridLayout_Alignment : NSObject
 
@@ -830,20 +869,20 @@ J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Spec)
 
 - (instancetype)init;
 
-- (jint)getAlignmentValueWithADView:(ADView *)view
-                            withInt:(jint)viewSize
-                            withInt:(jint)mode;
+- (int32_t)getAlignmentValueWithADView:(ADView *)view
+                               withInt:(int32_t)viewSize
+                               withInt:(int32_t)mode;
 
 - (ADXGridLayout_Bounds *)getBounds;
 
 - (NSString *)getDebugString;
 
-- (jint)getGravityOffsetWithADView:(ADView *)view
-                           withInt:(jint)cellDelta;
+- (int32_t)getGravityOffsetWithADView:(ADView *)view
+                              withInt:(int32_t)cellDelta;
 
-- (jint)getSizeInCellWithADView:(ADView *)view
-                        withInt:(jint)viewSize
-                        withInt:(jint)cellSize;
+- (int32_t)getSizeInCellWithADView:(ADView *)view
+                           withInt:(int32_t)viewSize
+                           withInt:(int32_t)cellSize;
 
 @end
 
@@ -853,12 +892,14 @@ FOUNDATION_EXPORT void ADXGridLayout_Alignment_init(ADXGridLayout_Alignment *sel
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Alignment)
 
+
 #endif
 
 #if !defined (ADXGridLayout_Printer_) && (INCLUDE_ALL_GridLayout || defined(INCLUDE_ADXGridLayout_Printer))
 #define ADXGridLayout_Printer_
 
 @class ADXGridLayout;
+@class NSString;
 
 @interface ADXGridLayout_Printer : NSObject
 
@@ -883,6 +924,7 @@ FOUNDATION_EXPORT ADXGridLayout_Printer *new_ADXGridLayout_Printer_initWithADXGr
 FOUNDATION_EXPORT ADXGridLayout_Printer *create_ADXGridLayout_Printer_initWithADXGridLayout_(ADXGridLayout *outer$);
 
 J2OBJC_TYPE_LITERAL_HEADER(ADXGridLayout_Printer)
+
 
 #endif
 

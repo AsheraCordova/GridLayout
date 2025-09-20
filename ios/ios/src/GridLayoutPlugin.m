@@ -3,10 +3,21 @@
 //  source: D:\Java\git\core-ios-widgets\IOSAndroidXGridlayoutPlugin\src\main\java\com\ashera\gridlayout\GridLayoutPlugin.java
 //
 
+#define J2OBJC_IMPORTED_BY_JAVA_IMPLEMENTATION 1
+
+
+
+
 #include "GridLayoutImpl.h"
 #include "GridLayoutPlugin.h"
 #include "J2ObjC_source.h"
 #include "WidgetFactory.h"
+
+
+
+
+#pragma clang diagnostic error "-Wreturn-type"
+#pragma clang diagnostic ignored "-Wswitch"
 
 
 @implementation ASGridLayoutPlugin
@@ -57,3 +68,5 @@ void ASGridLayoutPlugin_initPlugin() {
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ASGridLayoutPlugin)
+
+J2OBJC_NAME_MAPPING(ASGridLayoutPlugin, "com.ashera.gridlayout", "AS")

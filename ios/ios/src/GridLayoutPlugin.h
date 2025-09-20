@@ -3,6 +3,7 @@
 //  source: D:\Java\git\core-ios-widgets\IOSAndroidXGridlayoutPlugin\src\main\java\com\ashera\gridlayout\GridLayoutPlugin.java
 //
 
+#import <Foundation/Foundation.h>
 #include "J2ObjC_header.h"
 
 #pragma push_macro("INCLUDE_ALL_GridLayoutPlugin")
@@ -39,6 +40,7 @@ FOUNDATION_EXPORT void ASGridLayoutPlugin_initPlugin(void);
 J2OBJC_TYPE_LITERAL_HEADER(ASGridLayoutPlugin)
 
 @compatibility_alias ComAsheraGridlayoutGridLayoutPlugin ASGridLayoutPlugin;
+
 
 #endif
 
